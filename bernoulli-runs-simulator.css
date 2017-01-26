@@ -1,0 +1,50 @@
+#bernoulli-calculator {
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+#bernoulli-title {
+  text-align: center;
+  font: 1.2em sans-serif;
+}
+
+#bernoulli-calculator, #bernoulli-calculator div + div {
+  margin-top: 1em;
+}
+
+label {
+  font: 1em sans-serif;
+}
+
+.input label {
+  display: inline-block;
+  width: 250px;
+  text-align: right;
+}
+
+input, #bernoulli-result {
+  text-align: right;
+  width: 30px;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+input: focus {
+  border-color: #000;
+}
+
+#bernoulli-result {
+  height: 1.1em;
+  line-height: 1.1em;
+  vertical-align: center;
+  border: 0px;
+}
+
+.button {
+  margin: 0 auto;
+  width: 50px;
+}
