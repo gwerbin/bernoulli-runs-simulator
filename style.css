@@ -19,15 +19,9 @@ label {
   font: 1em sans-serif;
 }
 
-.input label {
-  display: inline-block;
-  width: 250px;
+input {
   text-align: right;
-}
-
-input, #bernoulli-result {
-  text-align: right;
-  width: 30px;
+  width: 50px;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #999;

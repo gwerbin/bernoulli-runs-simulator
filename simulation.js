@@ -1,10 +1,3 @@
-var button = document.getElementById('bernoulli-button');
-button.onclick = function() {
-  var inputs = getInputs();
-  result = calculateProbability(...inputs);
-  document.getElementById("bernoulli-result").innerHTML = result.toPrecision(2);
-}
-
 function binomial(n, k) {
   /*
    * Calculate the binomial coefficient, "n choose k," assuming n and k are
@@ -17,14 +10,6 @@ function binomial(n, k) {
   return result;
 }
 
-function getInputs() {
-  var k = document.getElementById('bernoulli-k').value;
-  var n = document.getElementById('bernoulli-n').value;
-  var p = document.getElementById('bernoulli-p').value;
-  var x = document.getElementById('bernoulli-x').value;
-  return [k, n, p, x].map(Number);
-}
-
 function calculateProbability(k, n, p, x) {
   /*
    * Implement the formula for the probability of x success runs of length k,
@@ -32,19 +17,19 @@ function calculateProbability(k, n, p, x) {
    *   http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.9.4355
    */
   if ( isNaN(k) || isNaN(n) || isNaN(p) || isNaN(x) ) {
-    return "ERROR: inputs must be numbers";
+    return "Inputs must be numbers.";
   }
   if ( k < 0 || n < 0 || x < 0 ) {
-    return "ERROR: inputs must be non-negative";
+    return "Inputs must be non-negative.";
   }
   if ( k <= 1 ) {
-    return "ERROR: \"runs\" must be at least length 2";
+    return "Cannot have a run shorter than 2 successes.";
   }
   if ( k * x > n ) {
-    return "ERROR: minimum run length is too long, or too many runs";
+    return "Minimum run length is too long, or too many runs requested.";
   }
   if ( p < 0 || p > 1 ) {
-    return "ERROR: success probability is not between 0 and 1";
+    return "Success probability is not between 0 and 1.";
   }
 
   var mk = 0;
